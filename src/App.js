@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-
+import './components/List';
+import List from './components/List';
+import AddUser from './components/Header';
+import Add2 from './components/Add2';
+import Users from './components/Data.json';
+import Header from './components/Header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
+  
+
+  const [people, updateUser] = useState([]);
+
+  const addPerson = (person) => {
+    updateUser([...people, person]);
+  };
+
+ 
+console.log(people);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <><Add2 addPerson={addPerson} />
+      <List people={people} />
+
+
+    </>
+/* <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}/>
+          <Route index element={} />
+          <Route path="blogs" element={<Add2 />} />
+        
+      </Routes>
+    </BrowserRouter> */
+
   );
 }
+
+
+
 
 export default App;
