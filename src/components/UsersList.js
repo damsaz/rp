@@ -1,18 +1,21 @@
-[
+export const UsersList = [
+
   {
-    "id":1,
+   
     "FirstName":"Behrouz",
      "SecondName":"Damsaz", 
-     "Age":18, 
+     "Age":"18", 
      "Nationality":"Iranian", 
      "EmailAdress":"b@y.com"
 },
 {
-  "id":2,
+  
     "FirstName":"a",
      "SecondName":"b", 
-     "Age":18, 
+     "Age":"18", 
      "Nationality":"Sweden", 
      "EmailAdress":"a@b.com"
 }
-]
+];
+
+export default UsersList;

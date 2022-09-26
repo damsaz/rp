@@ -6,43 +6,35 @@ import Row from 'react-bootstrap/Row';
 
 function Add2({addPerson}) {
      const [personInfo, setpersonInfo] = useState({
-    Firstname: "",
-    LastName: "",
-    Age: "",
-    Nationality: "",
-    EmailAdress: "",
+      FirstName:"",
+      SecondName:"", 
+      Age:"", 
+      Nationality:"", 
+      EmailAdress:""
   });
   
   
-  
-   
-
   const [validated, setValidated] = useState();
-  
+ 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() ===   false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    else
-    {
+  
        
-    personInfo.Firstname =event.target[0].value;
-    personInfo.LastName=event.target[1].value;
-    personInfo.Nationality=event.target[2].value;
-    personInfo.Age=event.target[3].value;
+    personInfo.FirstName =event.target[0].value;
+    personInfo.SecondName=event.target[1].value;
+    personInfo.Age=event.target[2].value;
+    personInfo.Nationality=event.target[3].value;
     personInfo.EmailAdress=event.target[4].value;
     
     setpersonInfo({ ...personInfo});
-    addPerson(personInfo);
-        }
+    addPerson([personInfo]);
+        
     
         
-        setValidated(true);
+     //   setValidated(true);
 
         
-    console.log(personInfo);
+   
    
   };
 
