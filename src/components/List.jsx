@@ -37,6 +37,7 @@ const HomePageHeader = () => {
             <th>Age</th>
             <th>Nationality</th>
             <th>EmailAdress</th>
+            <th>View</th>
             
       </tr>
       </thead>
