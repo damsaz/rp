@@ -1,8 +1,8 @@
 
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Details from './Details';
+
 export default function USer({people}) {
   if(!people)
   return(null);
@@ -59,10 +59,7 @@ export default function USer({people}) {
             <td>
             <Link to={Linkp} state={Data}>View</Link>
             </td>
-            <td>
-          
-            
-            </td>
+         
           </tr>
 
     );

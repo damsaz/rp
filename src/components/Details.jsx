@@ -3,10 +3,10 @@
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {useParams} from 'react-router-dom';
+//import {useParams} from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 const Details = () => {
-  const params = useParams();
+ // const params = useParams();
   const location = useLocation();
   const data2 = location.state;
 console.log(data2.Age);

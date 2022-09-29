@@ -1,28 +1,38 @@
-import { useState } from "react";
+import React, { useContext, useState, useEffect } from 'react';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import "../../App.css";
-import { ReactSession }  from 'react-client-session';
-import { useCookies } from 'react-cookie';
-import { Navigate } from "react-router-dom";
+import UserInfoP from "../UserContext";
+import { useNavigate } from "react-router-dom";
+//import { useCookies } from 'react-cookie';
 export default function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-  
+    const UserI = useContext(UserInfoP)
+    const navigate = useNavigate();
+    console.log(UserI.UserName);
+    useEffect(() => {
+        if (UserI.UserName!=="") {
+       
+          return navigate("/");
+        }
+      });
     function performValidation() {
     return username.length > 0 && password.length > 0;
     }
    
     
-    const [cookies, setCookie, removeCookie] = useCookies(['username']);
+    //const [cookies, setCookie, removeCookie] = useCookies(['username']);
     
    
     function handleSubmit(event) {
-       
-        setCookie( "username",username,{ path: '/' });
-        <Navigate to="/User" replace={true} />
-       
+        console.log(UserI.Username)
+        UserI.UserName=username;
+       // setCookie( "username",username,{ path: '/' });
+    
+      //     <navigate to="/" />
       
     event.preventDefault();
     }
