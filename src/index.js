@@ -41,6 +41,7 @@ root.render(
           <Route path="/Details" element={<Details />}>
             <Route path=":id" element={<Details />} />
           </Route>
+          <Route path="*" element={<Error404 />} />
           <Route path="Account/Login" element={<Login />} />
 
 
